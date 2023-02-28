@@ -6,8 +6,9 @@ import {BaseHandler} from "./BaseHandler.sol";
 import {CommonBase} from "forge-std/Base.sol";
 import {console2} from "forge-std/console2.sol";
 import {StdInvariant} from "forge-std/StdInvariant.sol";
+import {StdAssertions} from "forge-std/StdAssertions.sol";
 
- contract BaseInvariant is CommonBase, StdInvariant {
+ contract BaseInvariant is CommonBase, StdInvariant, StdAssertions {
 
     modifier targetSpecificSelectors {
         // Perform the setup
