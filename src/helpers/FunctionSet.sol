@@ -44,12 +44,14 @@ library LibFunctionSet {
         }
     }
 
-    function log(FunctionSet storage s) internal view {
+    function log(FunctionSet storage s, string memory _functionPrefix) internal view {
         VmSafe vm = VmSafe(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
         for(uint256 _i; _i < s.fncs.length;){
             Function storage _fnc = s.fncs[_i];
             console2.log(string.concat(
                 "- ",
+                _functionPrefix,
+                "::",
                 _fnc.label,
                 ": ",
                 vm.toString(s.calledCount[_fnc.selector] - 1)

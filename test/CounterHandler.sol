@@ -8,7 +8,7 @@ import "./target/Counter.sol";
 contract CounterHandler is BaseHandler {
     Counter public counter;
 
-    constructor() {
+    constructor() BaseHandler("CounterHandler") {
         counter = new Counter();
 
         // Register all the functions that should be targeted
